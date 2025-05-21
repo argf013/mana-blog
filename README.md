@@ -8,13 +8,13 @@ ManaBlog is a modern, full-featured blogging platform built with React and Fireb
 ## 🔑 Key Features
 
 ### User Authentication
-
+![login_page](https://raw.githubusercontent.com/argf013/mana-blog/refs/heads/master/mana-blog.netlify.app_login.png?token=GHSAT0AAAAAADCDUSMCJJ4KLSAEAEGAZL7O2BOHMCQ)
 - Full authentication system with email/password login
 - Profile management with custom display names and profile photos
 - Secure password handling with reauthentication for sensitive operations
 
 ### Content Management
-
+![add-blogpost-page](https://raw.githubusercontent.com/argf013/mana-blog/refs/heads/master/mana-blog.netlify.app_dashboard_edit_blog_0hFAIOmkaQD7S5CK2X0a.png?token=GHSAT0AAAAAADCDUSMDY2I7DW2SHH25YR2I2BOHN2A)
 - Rich Markdown-based post creation and editing
 - Real-time preview while editing blog content
 - Image upload with automatic compression for performance optimization

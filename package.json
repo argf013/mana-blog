@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^19.11.0",
-    "argf-component": "^1.1.0",
     "browser-image-compression": "^2.0.2",
     "date-fns": "^3.6.0",
     "firebase": "^10.13.1",

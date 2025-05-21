@@ -16,6 +16,9 @@ const Navbar = ({ user, setUser }) => {
     const { addToast } = useToast();
     const dropdownRef = useRef(null);
 
+    // Check if current page is a blog detail page
+    const isBlogDetailPage = /^\/blogs\/[^/]+$/.test(location.pathname);
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -31,15 +34,18 @@ const Navbar = ({ user, setUser }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const currentScroll = window.scrollY;
-            const scrollPercentage = (currentScroll / totalScroll) * 100;
-            setScrollProgress(scrollPercentage);
+            // Only track scroll progress on blog detail pages
+            if (isBlogDetailPage) {
+                const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                const currentScroll = window.scrollY;
+                const scrollPercentage = (currentScroll / totalScroll) * 100;
+                setScrollProgress(scrollPercentage);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isBlogDetailPage]);
 
     const handleLogout = async () => {
         try {
@@ -181,11 +187,12 @@ const Navbar = ({ user, setUser }) => {
                     </ul>
                 </div>
             </div>
-            {/* Progress Bar */}
-            <div
-                className="bg-blue-600 transition-all duration-300 ease-out"
-                style={{ width: `${scrollProgress}%`, height: '5px' }}
-            />
+            {isBlogDetailPage && (
+                <div
+                    className="bg-blue-600 transition-all duration-300 ease-out"
+                    style={{ width: `${scrollProgress}%`, height: '5px' }}
+                />
+            )}
         </nav>
     );
 };

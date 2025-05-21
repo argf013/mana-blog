@@ -72,5 +72,3 @@ ManaBlog is a modern, full-featured blogging platform built with React and Fireb
 - Seamless UI flow even during async operations with proper loading states
 
 ---
-
-This project showcases a practical implementation of modern frontend technologies, demonstrating attention to usability, performance, and clean architecture—all while enabling both technical excellence and user-centric design.
